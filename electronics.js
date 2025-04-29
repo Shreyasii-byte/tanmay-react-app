@@ -1,41 +1,35 @@
 import React from "react";
 
-// Sample product data (can be imported from a shared data file)
-const allProducts = [
-  {
-    id: 1,
-    name: "iPhone 12",
-    category: "Electronics",
-    price: 40000,
-    condition: "Used",
-    description: "Good condition, minor scratches",
-    image: "https://via.placeholder.com/150"
-  },
-  {
-    id: 2,
-    name: "HP Laptop",
-    category: "Electronics",
-    price: 30000,
-    condition: "Used",
-    description: "8GB RAM, i5 processor",
-    image: "https://via.placeholder.com/150"
-  },
-  {
-    id: 3,
-    name: "Denim Jacket",
-    category: "Clothing",
-    price: 1200,
-    condition: "New",
-    description: "Stylish denim jacket",
-    image: "https://via.placeholder.com/150"
-  }
-];
-
 export default function Electronics() {
-  // Filter products for "Electronics"
-  const electronicsProducts = allProducts.filter(
-    (product) => product.category === "Electronics"
-  );
+  const electronicsProducts = [
+    {
+      id: 1,
+      name: "iPhone 12",
+      category: "Electronics",
+      price: 40000,
+      condition: "Used",
+      description: "Good condition iPhone 12 with minor scratches, 64GB storage.",
+      image: "https://via.placeholder.com/150"
+    },
+    {
+      id: 2,
+      name: "HP Laptop",
+      category: "Electronics",
+      price: 30000,
+      condition: "Used",
+      description: "HP Pavilion with 8GB RAM, i5 10th Gen processor.",
+      image: "https://via.placeholder.com/150"
+    },
+    {
+      id: 3,
+      name: "Sony Headphones",
+      category: "Electronics",
+      price: 2500,
+      condition: "New",
+      description: "Noise cancelling headphones, brand new, sealed box.",
+      image: "https://via.placeholder.com/150"
+    }
+  ];
 
   return (
     <div style={{ padding: "20px" }}>
@@ -45,10 +39,11 @@ export default function Electronics() {
           <div
             key={item.id}
             style={{
-              border: "1px solid #ccc",
-              borderRadius: "8px",
+              border: "1px solid #ddd",
+              borderRadius: "10px",
               padding: "15px",
-              width: "250px"
+              width: "250px",
+              boxShadow: "2px 2px 8px rgba(0, 0, 0, 0.1)"
             }}
           >
             <img
@@ -61,10 +56,10 @@ export default function Electronics() {
                 borderRadius: "5px"
               }}
             />
-            <h3>{item.name}</h3>
-            <p>Condition: {item.condition}</p>
-            <p>Price: ₹{item.price}</p>
-            <p>{item.description}</p>
+            <h3 style={{ margin: "10px 0 5px" }}>{item.name}</h3>
+            <p style={{ margin: "5px 0" }}>Condition: {item.condition}</p>
+            <p style={{ margin: "5px 0" }}>Price: ₹{item.price}</p>
+            <p style={{ fontSize: "0.9em", color: "#555" }}>{item.description}</p>
             <button
               style={{
                 marginTop: "10px",
